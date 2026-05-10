@@ -1,0 +1,20 @@
+{
+  "name": "neurotraffic-3d",
+  "version": "1.0.0",
+  "description": "AI-POWERED ADAPTIVE SMART JUNCTION MANAGEMENT SYSTEM",
+  "main": "index.js",
+  "scripts": {
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:ai": "cd ai-service && .\\venv\\Scripts\\activate && uvicorn main:app --reload --port 8000",
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\" \"npm run dev:ai\"",
+    "test:autonomous": "node nexus_testing_agent.js",
+    "test": "npm run test:autonomous",
+    "install:all": "npm i && cd frontend && npm i && cd ../backend && npm i"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "author": "",
+  "license": "ISC"
+}
